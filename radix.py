@@ -1,6 +1,6 @@
 def radixsort(unsortedlst, size):
     maxLen = maxString(unsortedlst)
-    o0 = ord('0') - 1;
+    o0 = ord(chr(1)) - 1;
     oz = ord('z') - 1;
     n = oz - o0 + 2; 
     buckets = [[] for i in range(0, n)] 
@@ -25,7 +25,7 @@ def maxString(unsortedlst):
     return maxLen
 
 def main():
-    prlist = ['This', 'is', 'a', 'test', 'string', 'from', 'Andrew']
+    prlist = ['This', 'is', 'a', '/est', 'string', 'from', 'Andrew']
     srtlst = radixsort(prlist, len(prlist))
     print(srtlst)
     prlist.sort()
