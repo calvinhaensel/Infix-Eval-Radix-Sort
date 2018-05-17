@@ -21,11 +21,15 @@ class Stack:
 
     
 def eval_infix(ex):
-    infstr= ex.split(" ")
+    infstr= list(ex)
     print(infstr)
-    for k in range(len(infstr)):
-        if infstr[k] == '**':
-            infstr[k] = '^'
+    for k in range(len(infstr) - 1):
+        if infstr[k] =='*':
+            if infstr[k + 1] == '*':
+                infstr[k] = '^'
+                infstr.pop(k + 1)
+                
+    print(infstr)
     numstack = Stack()
     opstack = Stack()
     num=""
